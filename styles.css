@@ -1,0 +1,108 @@
+	body{
+		background: white;
+		overflow-x: hidden;
+	}	
+	
+	.panel{
+		position: fixed;
+		bottom: 0px;
+		background-color: white;
+		margin: 20px;
+		right: -354px;
+		width: 290px;
+		height: 236px;
+		padding: 20px;
+		border: 1px solid #c8cbce;
+		box-shadow: 0px 3px 6px 2px rgba(0,0,0,.15);
+    	/*box-shadow: -1px 3px 16px 6px rgba(0,0,0,.15);*/
+	}
+
+	/* close icon related csss*/
+	.close {
+	  float: right;
+	  opacity: 0.3;
+	  color: #333;
+	  position: relative;
+	  top: -15px;
+	  right: -6px;
+	  cursor: pointer;
+	}
+	
+	.close::before{
+		content: '\2716';
+	}
+	.close:hover {
+	  opacity: 1;
+	}
+	/* end of close icon related css */
+
+	/* open button related css*/
+	.open{
+		position: absolute;
+	    transform: rotate(270deg);
+	    transform-origin: left top 0;
+	    top: 174px;
+	    left: -22px;
+	    cursor: pointer;
+	    background: #c54646;
+	    color: white;
+	    padding: 0px;
+    	font-weight: 900;
+    	height: 0px;
+	}
+	/* end of open button related css*/
+
+	/* content box */
+	.content{
+		width: 100%;
+    	padding-top: 10px;
+	}
+
+	
+	/* image containe div */
+	.img-container{
+		float: left;
+    	width: 47%;
+    	margin: 2px;
+    	border:1px solid #BFBFBF;
+	}
+
+	.pic{
+		width: 100%;
+		transition: all 0.3s;
+	}
+	.text-body{
+		text-align: center;
+	    background: #F2F2F2;
+	    margin-top: -4px;
+	    min-height: 45px;
+	    border-top: 2px solid #BFBFBF;
+	    padding:7px;
+	    font-size: 13px;
+	    font-weight: 900;
+	}
+	.see_more{
+		cursor: pointer;
+		font-weight: 700;
+	}
+
+	.see_more:hover{
+		color: blue;
+	}
+
+	.picbig{
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		/*min-height: 600px;*/
+		width: 0px;
+		-webkit-transition: width 0.3s linear 0s;
+		transition: width 0.3s linear 0s;
+		z-index: 10;
+	}
+
+	.pic:hover + .picbig{	
+		width: 500px;
+		transform: scale(1.5);
+	}
+	/* end of image container */
