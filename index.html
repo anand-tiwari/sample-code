@@ -5,32 +5,36 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
-
-	<div class="panel">
-		<div class="open">open</div>
-		<div class="close"></div>
-		<div>Are you looking for 'White dresses'</div>
-		<div class="content">
-			<div class="img-container">
-				<img class="pic" src="images/h2.jpg"/>
-				<img class="picbig" src="images/h2.jpg"/>	
-				<div class="text-body">
-					Cotton White Dresses
-					<div class="see_more">See more</div>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div ng-repeat="item in data">
+    	<div class="panel" ng-style='{"top": {{item.top}}+"px"}'>
+			<div class="open">open</div>
+			<div class="close"></div>
+			<div>{{item.type}}</div>
+			<div class="content">
+				<div class="item-container">
+					<div class="img-box">
+						<img src="images/{{item.img1}}"/>
+					</div>
+					<div class="text-body">
+						<span>{{item.specification}}</span>
+						<div class="see_more">See more</div>
+					</div>
 				</div>
-			</div>
-			<div class="img-container">
-				<img class="pic" src="images/h3.jpg"/>
-				<img class="picbig" src="images/h3.jpg"/>	
-				<div class="text-body">
-					Cotton White Dresses
-					<div class="see_more">See more</div>	
+				<div class="item-container">
+					<div class="img-box">
+						<img src="images/{{item.img2}}"/>
+					</div>
+					<div class="text-body">
+						<span>{{item.specification}}</span>
+						<div class="see_more">See more</div>	
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
 	<script src="jquery.min.js"></script>
+	<script src="angular.min.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
