@@ -66,7 +66,7 @@
     	margin: 2px;
     	border:1px solid #BFBFBF;
 	}
-
+	
 	.text-body{
 		text-align: center;
 	    background: #F2F2F2;
@@ -88,7 +88,7 @@
 	}
 	/* end of image container */
 
-	/* backgroung-image: cover */
+	/* backgroung-image: cover using javascript */
 	.img-box{height:150px;width:100%;overflow:hidden}
 	.wh{height:100%!important}
 	.ww{width:100%!important}
