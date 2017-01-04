@@ -64,7 +64,7 @@ var app = angular.module('myApp', []);
 	$(document).ready(function(){
 		$(".panel").animate({ 
 	        right:'0px'
-	    },1000);
+	    },2000);
 
 	  	// close icon code 
 	    $(".close").on('click',function(){
@@ -88,33 +88,34 @@ var app = angular.module('myApp', []);
 	    	});
 	    });
 
-	    $('.img-box').each(function(){
-	    	//set size
-		    var containerHeight = $(this).height(),//box height
-		        containerWidth = $(this).width(),//box width
-		        image = $(this).children('img'),//image
-		        imageHeight = image.height(),//inital image height
-		        imageWidth = image.width();//initial image width
+	    setTimeout(function(){
+		    $('.img-box').each(function(){
+		    	//set size
+			    var containerHeight = $(this).height(),//box height
+			        containerWidth = $(this).width(),//box width
+			        image = $(this).children('img'),//image
+			        imageHeight = image.height(),//inital image height
+			        imageWidth = image.width();//initial image width
 
-		    if (imageWidth<imageHeight) { //if portrait
-		    	image.addClass('ww').removeClass('wh');//set width 100%
-		    } else { //if lanadscape
-		        image.addClass('wh').removeClass('ww');//set height 100%
-		    }
+			    if (imageWidth<imageHeight) { //if portrait
+			    	image.addClass('ww').removeClass('wh');//set width 100%
+			    } else { //if lanadscape
+			        image.addClass('wh').removeClass('ww');//set height 100%
+			    }
+			    //set offset
+			    var newimageHeight = image.height(),//new image height
+			        newimageWidth = image.width(),//new image width
+			        heightDiff = (newimageHeight-containerHeight)/2,//half dif img/box height
+			        widthDiff = (newimageWidth-containerWidth)/2;//half dif img/box width
 
-		    //set offset
-		    var newimageHeight = image.height(),//new image height
-		        newimageWidth = image.width(),//new image width
-		        heightDiff = (newimageHeight-containerHeight)/2,//half dif img/box height
-		        widthDiff = (newimageWidth-containerWidth)/2;//half dif img/box width
+			    if (widthDiff>0) {
+			        image.css({marginLeft: '-'+widthDiff+'px', marginTop: 0});//offset left
+			    } else {
+			        image.css({marginTop: '-'+heightDiff+'px', marginLeft: 0});//offset top
+			    }
+			});
+		},500);
 
-		    if (widthDiff>0) {
-		        image.css({marginLeft: '-'+widthDiff+'px', marginTop: 0});//offset left
-		    } else {
-		        image.css({marginTop: '-'+heightDiff+'px', marginLeft: 0});//offset top
-		    }
-
-		});
 	});
 });
 
